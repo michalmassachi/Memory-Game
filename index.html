@@ -1,0 +1,113 @@
+<!-- Michal Massachi 211990841
+     Tal Teri 319123543 -->
+     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Game container -->
+  <div class="game-container">
+
+    <!-- Info button -->
+    <button id="info-button">Info</button>
+
+    <!-- Info modal -->
+    <div id="info-modal" class="modal">
+      <div class="modal-content">
+        <p>This is a Memory Game, you have to match pairs of matching cards pairs.</p>
+        <p>Your score in the game is calculated by the time  and number of moves taken to reveal the numbers of pairs you choose. The formula calculated by: 15 seconds and 10 moves for 30 pairs of cards is a score of 1000.</p>
+        <p>GOOD LUCK!</p>
+        <button id="got-it-button">Got it!</button>
+      </div>
+    </div> 
+
+    <!-- Header -->
+    <div class="header">
+      <div class="game-name">Memory Game</div>            
+    </div>
+
+    <!-- Welcome section -->
+    <div class ="welcome" id="welcomeDiv">
+        <div class="welcome-message" id="welcomeMessage">
+            Welcome! Please enter your username and the number of pairs of cards you want to play with
+          </div>
+    </div>
+
+    <!-- Input container -->
+    <div class="input-container">
+      <label for="playerNameInput" id="nameLabel">Enter Your Name:</label>
+      <input type="text" id="playerNameInput" class="form-control">
+      <label for="cardPairsInput" id="cardLabel">Number of Card Pairs (up to 30):</label>
+      <input type="number" id="cardPairsInput" class="form-control">
+      <button id="startGameBtn" class="btn btn-primary">Start Game</button>
+    </div>
+
+    <!-- New game modal -->
+    <div id="newGameModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <p id="congratulationsMessage"></p>
+        <p>Do you want to play a new game?</p>
+        <button id="newGameBtn" class="btn btn-primary">New Game</button>
+        <button id="noBtn" class="btn btn-secondary">No</button>
+      </div>
+    </div>
+
+    <!-- Goodbye modal -->
+    <div id="goodbyeModal" class="modal">
+      <div class="modal-content">
+        <p>Thank you for playing, Goodbye!</p>
+      </div>
+    </div>
+
+    <!-- Game board -->
+    <div class="game-board"></div>
+
+    <!-- Game over section -->
+    <div class="game-over" style="display: none;">
+      <p>Game Over!</p>
+      <button class="new-game-btn btn btn-primary">New Game</button>
+    </div>
+
+    <!-- Game controls container -->
+    <div class="game-controls-container">
+      <div class="game-controls">
+        <button id="pauseBtn" class="btn btn-primary">Pause Game</button>
+        <div class="loader"></div>
+        <button id="resumeBtn" class="btn btn-primary" style="display: none;">Resume Game</button>
+        <div class="timer" id="Timer">Timer: 00:00</div>
+        <div class="score" id="Score">Your Score is: 0</div>
+ 
+      </div>
+    </div>
+
+    <!-- Matched pairs section -->
+    <div class="matched-pairs"></div>
+    <div class="moves"></div>
+
+    <!-- Quit button -->
+    <div class="quit-button">
+      <button class="btn btn-danger">Quit Game</button>
+    </div>
+
+    <!-- Quit modal -->
+    <div id="quitModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <p>Are you sure you want to quit the game?</p>
+        <button id="confirmQuitBtn" class="btn btn-danger">Quit</button>
+        <button id="cancelQuitBtn" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- External JavaScript and jQuery libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
